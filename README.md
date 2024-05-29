@@ -12,7 +12,7 @@
 - 사용된 기술 : Spring DataJDBC, Lombok, Redis
 
 # ERD
-![img.png]()
+![erd](https://github.com/Jungjuhyeon/Activity-Book/assets/131857282/1b468b39-98f9-462a-8a95-b8614825b9da)
 
 # 📜 구현 기능
 
