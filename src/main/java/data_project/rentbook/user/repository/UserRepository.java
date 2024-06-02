@@ -88,8 +88,8 @@ public class UserRepository {
     public List<BookDtoRes.MyBookRes> rentBookSearch(Long user_id){
         String query = "SELECT B.book_id, B.book_name, B.book_author " +
                 "FROM User U " +
-                "INNER JOIN rent_book RB ON U.user_id = RB.user_id " +
-                "INNER JOIN book B ON RB.book_id = B.book_id " +
+                "INNER JOIN Rent_book RB ON U.user_id = RB.user_id " +
+                "INNER JOIN Book B ON RB.book_id = B.book_id " +
                 "WHERE U.user_id = ?";
 
         return this.jdbcTemplate.query(query,
