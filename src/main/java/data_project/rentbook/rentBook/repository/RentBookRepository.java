@@ -22,7 +22,7 @@ public class RentBookRepository {
 
     //대여 가능한지 여부 확인
     public String checkRentBook(Long book_id) {
-        String query = "SELECT status FROM book WHERE book_id = ?";
+        String query = "SELECT status FROM Book WHERE book_id = ?";
         return this.jdbcTemplate.queryForObject(query, String.class, book_id);
     }
 

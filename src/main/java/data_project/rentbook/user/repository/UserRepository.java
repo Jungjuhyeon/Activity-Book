@@ -26,7 +26,7 @@ public class UserRepository {
      * 회원가입 시 EMail 중복 SELECT 쿼리
      */
     public int checkEmail(String email) {
-        String query = "SELECT EXISTS(SELECT user_id FROM user WHERE email = ?)";
+        String query = "SELECT EXISTS(SELECT user_id FROM User WHERE email = ?)";
         return this.jdbcTemplate.queryForObject(query, int.class, email);
     }
 
@@ -36,7 +36,7 @@ public class UserRepository {
      * 회원가입 INSERT 쿼리
      */
     public Long signUp(UserDtoReq.enrollUser request){
-        String query = "INSERT INTO user(email, name, password) VALUES (?, ?, ?);";
+        String query = "INSERT INTO User(email, name, password) VALUES (?, ?, ?);";
         Object[] params = new Object[]{
                 request.getEmail(),
                 request.getName(),
@@ -80,7 +80,7 @@ public class UserRepository {
      * 이메일 인증 완료시 상태 바꾸기
      */
     public void userActiveChange(Long user_id){
-        String query = "UPDATE user SET status = 'ACTIVE' WHERE user_id = ?";
+        String query = "UPDATE User SET status = 'ACTIVE' WHERE user_id = ?";
         this.jdbcTemplate.update(query, user_id);
     }
 
